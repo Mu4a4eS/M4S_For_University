@@ -168,89 +168,89 @@ public class LoanCalculator implements  ActionListener{
          // Создание панелей
 	panel.setBackground(new java.awt.Color(255, 255, 255));
 	// Присвоение цвета панелю
-panel.add(txtLabel1);
-panel.add(txt1);
-panel.add(txtLabel2);
-panel.add(txt2); 
-panel.add(txtLabel3);
-panel.add(txt3); 
-panel.add(txtLabel4);
-panel.add(txt4); 
-panel.add(txtLabel5);
-panel.add(txtRezult5);
-panel.add(txtLabel6);
-panel.add(txtRezult6);
-panel.add(txtLabel7);
-panel.add(txtRezult7);
-panel.add(txtLabel9);
-panel.add(txtRezult9);
-panel.add(txtLabel10);
-panel.add(txtRezult10);
-panel.add(btnRezult); 
-panel.add(btnClear); 
-JFrame frame = new JFrame();
-// Создание нового фрейма
-frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-// Закрытие прогрыммы при закрытии окна
-frame.setTitle("Кредитный калькулятор");
-// Название программы в титл
-frame.setLocationRelativeTo(null);
-// Положее окна
-frame.setResizable(false);
-// Запрещаем изменение размера окна
-frame.setSize(340,295);
-// Размер выводимого окна
-frame.getContentPane().add(panel);
-// Присваевание окна от panel
-frame.setVisible(true);
-// Разрешаем видеть окно
-}
-private void listeners(){
-// Выполняем решенеи
-JButton[] arrBtn = {btnRezult, btnClear}; 
-// Задаем кнопки
-for(int i = 0; i<arrBtn.length; i++){
-// Перечисляем вводимые кнопки
-arrBtn[i].addActionListener(this);
-// Присваеваем его к Listener и выполняем его там
-}
-}
-@Override 
-// Проведение отладки
-public void actionPerformed(ActionEvent ae) {
-float num1 = (float) Float.parseFloat(txt1.getText());
-// Вид реальное число num1 присвоить реальное число от txt1
-float num2 = (float) Float.parseFloat(txt2.getText());
-float num3 = (float) Float.parseFloat(txt3.getText());
-float num4 = (float) Float.parseFloat(txt4.getText());
-if(ae.getSource() == btnRezult){
-// Если нажата кнопка то выполняем следующие действия
-txtRezult5.setText(Float.toString(num1-num2));
-// Вычисляем необходимый кредит
-txtRezult6.setText(Float.toString(num2/num1*100));
-txtRezult7.setText(Double.toString(Math.ceil(((double)(num1-num2)*((0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1))));
-txtRezult9.setText(Double.toString(Math.ceil(((double)((num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1)*num4-(num1-num2))));
-txtRezult10.setText(Double.toString(Math.ceil(((double)(num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1)))+1))*num4));
-}else{
-// Иначе
-txtRezult5.setText("");
-// Очищаем поле
-txtRezult6.setText("");
-// Очищаем поле
-txtRezult7.setText("");
-// Очищаем поле
-txtRezult9.setText("");
-// Очищаем поле
-txtRezult10.setText("");
-// Очищаем поле
-txt1.setText("");
-// Цена кредита которое нам необходима, очищаем его
-txt2.setText("");
-// очищаем поле первоначальные взнос
-txt3.setText("");
-// Очищаем поле ставка процентов
-txt4.setText("");
-// Очищаем поле количество месяцев
-}
-}
+	panel.add(txtLabel1);
+	panel.add(txt1);
+	panel.add(txtLabel2);
+	panel.add(txt2); 
+	panel.add(txtLabel3);
+	panel.add(txt3); 
+	panel.add(txtLabel4);
+	panel.add(txt4); 
+	panel.add(txtLabel5);
+	panel.add(txtRezult5);
+	panel.add(txtLabel6);
+	panel.add(txtRezult6);
+	panel.add(txtLabel7);
+	panel.add(txtRezult7);
+	panel.add(txtLabel9);
+	panel.add(txtRezult9);
+	panel.add(txtLabel10);
+	panel.add(txtRezult10);
+	panel.add(btnRezult); 
+	panel.add(btnClear); 
+	JFrame frame = new JFrame();
+	// Создание нового фрейма
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	// Закрытие прогрыммы при закрытии окна
+	frame.setTitle("Кредитный калькулятор");
+	// Название программы в титл
+	frame.setLocationRelativeTo(null);
+	// Положее окна
+	frame.setResizable(false);
+	// Запрещаем изменение размера окна
+	frame.setSize(340,295);
+	// Размер выводимого окна
+	frame.getContentPane().add(panel);
+	// Присваевание окна от panel
+	frame.setVisible(true);
+	// Разрешаем видеть окно
+   }
+   private void listeners(){
+	// Выполняем решенеи
+	JButton[] arrBtn = {btnRezult, btnClear}; 
+	// Задаем кнопки
+	for(int i = 0; i<arrBtn.length; i++){
+		// Перечисляем вводимые кнопки
+		arrBtn[i].addActionListener(this);
+		// Присваеваем его к Listener и выполняем его там
+	}
+   }
+   @Override 
+   // Проведение отладки
+   public void actionPerformed(ActionEvent ae) {
+	float num1 = (float) Float.parseFloat(txt1.getText());
+	// Вид реальное число num1 присвоить реальное число от txt1
+	float num2 = (float) Float.parseFloat(txt2.getText());
+	float num3 = (float) Float.parseFloat(txt3.getText());
+	float num4 = (float) Float.parseFloat(txt4.getText());
+	if(ae.getSource() == btnRezult){
+		// Если нажата кнопка то выполняем следующие действия
+		txtRezult5.setText(Float.toString(num1-num2));
+		// Вычисляем необходимый кредит
+		txtRezult6.setText(Float.toString(num2/num1*100));
+		txtRezult7.setText(Double.toString(Math.ceil(((double)(num1-num2)*((0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1))));
+		txtRezult9.setText(Double.toString(Math.ceil(((double)((num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1)*num4-(num1-num2))));
+		txtRezult10.setText(Double.toString(Math.ceil(((double)(num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1)))+1))*num4));
+	}else{
+		// Иначе
+		txtRezult5.setText("");
+		// Очищаем поле
+		txtRezult6.setText("");
+		// Очищаем поле
+		txtRezult7.setText("");
+		// Очищаем поле
+		txtRezult9.setText("");
+		// Очищаем поле
+		txtRezult10.setText("");
+		// Очищаем поле
+		txt1.setText("");
+		// Цена кредита которое нам необходима, очищаем его
+		txt2.setText("");
+		// очищаем поле первоначальные взнос
+		txt3.setText("");
+		// Очищаем поле ставка процентов
+		txt4.setText("");
+		// Очищаем поле количество месяцев
+	}
+   }
 }
