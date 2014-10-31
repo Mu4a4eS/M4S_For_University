@@ -215,3 +215,42 @@ arrBtn[i].addActionListener(this);
 // Присваеваем его к Listener и выполняем его там
 }
 }
+@Override 
+// Проведение отладки
+public void actionPerformed(ActionEvent ae) {
+float num1 = (float) Float.parseFloat(txt1.getText());
+// Вид реальное число num1 присвоить реальное число от txt1
+float num2 = (float) Float.parseFloat(txt2.getText());
+float num3 = (float) Float.parseFloat(txt3.getText());
+float num4 = (float) Float.parseFloat(txt4.getText());
+if(ae.getSource() == btnRezult){
+// Если нажата кнопка то выполняем следующие действия
+txtRezult5.setText(Float.toString(num1-num2));
+// Вычисляем необходимый кредит
+txtRezult6.setText(Float.toString(num2/num1*100));
+txtRezult7.setText(Double.toString(Math.ceil(((double)(num1-num2)*((0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1))));
+txtRezult9.setText(Double.toString(Math.ceil(((double)((num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1))))+1)*num4-(num1-num2))));
+txtRezult10.setText(Double.toString(Math.ceil(((double)(num1-num2)*(0.0083+(0.0083/(((float)Math.pow(1.0083, num4))-1)))+1))*num4));
+}else{
+// Иначе
+txtRezult5.setText("");
+// Очищаем поле
+txtRezult6.setText("");
+// Очищаем поле
+txtRezult7.setText("");
+// Очищаем поле
+txtRezult9.setText("");
+// Очищаем поле
+txtRezult10.setText("");
+// Очищаем поле
+txt1.setText("");
+// Цена кредита которое нам необходима, очищаем его
+txt2.setText("");
+// очищаем поле первоначальные взнос
+txt3.setText("");
+// Очищаем поле ставка процентов
+txt4.setText("");
+// Очищаем поле количество месяцев
+}
+}
+}
