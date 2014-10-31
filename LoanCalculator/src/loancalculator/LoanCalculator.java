@@ -167,3 +167,51 @@ public class LoanCalculator implements  ActionListener{
         JPanel panel = new JPanel();
          // Создание панелей
 	panel.setBackground(new java.awt.Color(255, 255, 255));
+	// Присвоение цвета панелю
+panel.add(txtLabel1);
+panel.add(txt1);
+panel.add(txtLabel2);
+panel.add(txt2); 
+panel.add(txtLabel3);
+panel.add(txt3); 
+panel.add(txtLabel4);
+panel.add(txt4); 
+panel.add(txtLabel5);
+panel.add(txtRezult5);
+panel.add(txtLabel6);
+panel.add(txtRezult6);
+panel.add(txtLabel7);
+panel.add(txtRezult7);
+panel.add(txtLabel9);
+panel.add(txtRezult9);
+panel.add(txtLabel10);
+panel.add(txtRezult10);
+panel.add(btnRezult); 
+panel.add(btnClear); 
+JFrame frame = new JFrame();
+// Создание нового фрейма
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+// Закрытие прогрыммы при закрытии окна
+frame.setTitle("Кредитный калькулятор");
+// Название программы в титл
+frame.setLocationRelativeTo(null);
+// Положее окна
+frame.setResizable(false);
+// Запрещаем изменение размера окна
+frame.setSize(340,295);
+// Размер выводимого окна
+frame.getContentPane().add(panel);
+// Присваевание окна от panel
+frame.setVisible(true);
+// Разрешаем видеть окно
+}
+private void listeners(){
+// Выполняем решенеи
+JButton[] arrBtn = {btnRezult, btnClear}; 
+// Задаем кнопки
+for(int i = 0; i<arrBtn.length; i++){
+// Перечисляем вводимые кнопки
+arrBtn[i].addActionListener(this);
+// Присваеваем его к Listener и выполняем его там
+}
+}
